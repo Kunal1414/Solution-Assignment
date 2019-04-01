@@ -31,7 +31,7 @@ public class UserService {
 	public void clearCache() {
 	}
 
-	@Secured("ROLE_admin")
+	@Secured("ROLE_user")
 	@Cacheable(value = "users", unless = "#result != null")
 	public User getById(Long userid) throws UserNotFoundException {
 		Optional<User> optionalUser = userDAO.findById(userid);
@@ -42,6 +42,7 @@ public class UserService {
 		throw new UserNotFoundException("User Not Found");
 	}
 
+	@Secured("ROLE_admin")
 	public void deleteById(Long userid) throws UserNotFoundException {
 		try {
 			userDAO.deleteById(userid);
@@ -51,6 +52,7 @@ public class UserService {
 		return;
 	}
 
+	@Secured("ROLE_admin")
 	public User insertUser(User newuser) throws AssignmentException {
 		System.out.println("In service class");
 		System.out.println(newuser.getName());
@@ -77,6 +79,7 @@ public class UserService {
 		return newuser;
 	}
 
+	@Secured("ROLE_admin")
 	public User updateUser(Long userid, User updateuser) throws AssignmentException {
 		User user = getById(userid);
 		user.setName(updateuser.getName());
