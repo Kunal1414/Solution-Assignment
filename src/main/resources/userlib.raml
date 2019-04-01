@@ -1,0 +1,26 @@
+#%RAML 1.0 Library
+types: 
+  identifierforUserID:
+   type: integer
+  identifierforUserPassword:
+   type: string
+   pattern: ^[a-zA-Z]\w{3,20}$
+  identifierforUserstatus:
+   type: string
+   enum: [ACTIVATED, DEACTIVATED]
+  user : 
+   type: object
+   properties: 
+     userId: 
+      type: identifierforUserID
+      required: true
+     name: 
+      type: string
+      required: true
+     password: 
+      type: identifierforUserPassword
+      required: true
+     status: 
+      type: identifierforUserstatus
+      required: true
+     
