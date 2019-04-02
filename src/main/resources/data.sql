@@ -9,5 +9,5 @@ CREATE TABLE user
     PRIMARY KEY (userid)
 );
 
-insert into User (userid,name,password,status) values(1,'Ranga', 'fghhASDF23VJG','ACTIVATED');
-insert into User (userid,name,password,status) values(2,'Ravi', 'fghhASDF23VJG','DEACTIVATED');
+insert into User (userid,name,password,status) values(1,'Mangesh', 'fghhASDF23VJG','ACTIVATED');
+insert into User (userid,name,password,status) values(2,'Ashok', 'fghhASDF23VJG','DEACTIVATED');

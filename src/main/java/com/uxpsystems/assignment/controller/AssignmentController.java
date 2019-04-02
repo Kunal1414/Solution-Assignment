@@ -35,7 +35,7 @@ public class AssignmentController {
     	User user;
 		try {
 			user = userService.insertUser(newUser);
-			return new ResponseEntity<User>(user, HttpStatus.OK);
+			return new ResponseEntity<User>(user, HttpStatus.CREATED);
 		} catch (AssignmentException e) {
 			return new CustomizedResponseEntityExceptionHandler().forAssignmentException(e, userService.getError(e.getCause().getClass().getSimpleName()).toString());
 			
